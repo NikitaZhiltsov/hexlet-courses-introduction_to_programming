@@ -1,0 +1,30 @@
+const smallestDivisor = (num) => {
+  // BEGIN (write your solution here)
+  if (num === 1) {
+    return num;
+  }
+  
+  const count = (div) => {
+
+    if (num % div === 0) {
+      return div;
+    }
+
+return count (div + 1);
+  
+  }
+  return count(2);
+
+  // END
+};
+
+export default smallestDivisor;
+
+//Эскиз
+// на вход - num 
+// если num === 1 return num
+// в функции на вход num и divisor          divisor === 2       начальное значение в count(2)
+// проверки - делится ли на 2 без остатка   n%2===0
+// если да - это наименьший делитель.       return divisor
+// если нет добавляем один - итерация при помощи рекурсивного процесса: (divisor + 1) - передаем в функцию count  
+// делаем проверку условием на 9 стр.
